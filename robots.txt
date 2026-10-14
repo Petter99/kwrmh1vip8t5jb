@@ -1,2 +1,15 @@
+# Buscadores: no indexar. Los bots que arman la vista previa del enlace sí pueden leer la página.
+User-agent: WhatsApp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
 User-agent: *
 Disallow: /
