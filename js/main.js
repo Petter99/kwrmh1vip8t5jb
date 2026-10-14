@@ -1,7 +1,6 @@
 (() => {
   const $ = (s) => document.querySelector(s);
   const scene = $('#scene'), envelope = $('#envelope'), content = $('#content');
-  const audio = $('#bgm'), muteBtn = $('#mute');
 
   /* ── Corazoncitos flotando en el fondo del sobre ── */
   const bg = $('.hearts-bg');
@@ -21,11 +20,6 @@
     if (opened) return;
     opened = true;
 
-    // Debe ocurrir dentro del gesto del usuario para que el navegador permita el audio
-    audio.volume = 0.6;
-    audio.play().catch(() => { /* sin canción todavía: la página sigue funcionando */ });
-    muteBtn.hidden = false;
-
     scene.classList.add('opening');
     envelope.classList.add('open');                       // sello se rompe + solapa se abre
     setTimeout(() => envelope.classList.add('slide'), 750);   // la carta sale
@@ -37,13 +31,6 @@
       window.scrollTo(0, 0);
     }, 1700);
     setTimeout(() => scene.classList.add('gone'), 2900);
-  });
-
-  /* ── Mute ── */
-  muteBtn.addEventListener('click', () => {
-    audio.muted = !audio.muted;
-    muteBtn.classList.toggle('is-muted', audio.muted);
-    muteBtn.setAttribute('aria-label', audio.muted ? 'Activar música' : 'Silenciar música');
   });
 
   /* ── Aparición gradual al hacer scroll ── */
@@ -183,7 +170,7 @@
 
     // 1) Línea central
     const pts = [];
-    const y0 = 84;                                          // el hilo nace en un nudo, bajo el botón de mute
+    const y0 = 84;                                          // el hilo nace en un nudo, cerca del borde superior
     let y = y0, u = y0, ei = 0, done = false;
     while (y < h && !done) {
       const e = ev[ei];

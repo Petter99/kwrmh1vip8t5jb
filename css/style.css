@@ -23,21 +23,6 @@ body {
 body.locked { overflow: hidden; height: 100svh; }
 button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
 
-/* ───────── Botón mute ───────── */
-.mute {
-  position: fixed; top: max(14px, env(safe-area-inset-top)); right: 14px; z-index: 50;
-  width: 40px; height: 40px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: rgba(255,255,255,.7); backdrop-filter: blur(6px);
-  color: var(--rose-deep); box-shadow: 0 2px 10px rgba(184,68,94,.2);
-  opacity: .8; transition: opacity .2s;
-}
-.mute[hidden] { display: none; }
-.mute:hover { opacity: 1; }
-.mute .ico-off { display: none; }
-.mute.is-muted .ico-on { display: none; }
-.mute.is-muted .ico-off { display: block; }
-
 /* ───────── 1. Escena del sobre ───────── */
 .scene {
   position: fixed; inset: 0; z-index: 40;
