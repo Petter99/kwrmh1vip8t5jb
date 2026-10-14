@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fde3d6">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Para Karen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+  <!-- Audio de fondo: coloca tu canción en audio/cancion.mp3 -->
+  <audio id="bgm" src="audio/cancion.mp3" loop preload="auto"></audio>
+  <button id="mute" class="mute" aria-label="Silenciar música" hidden>
+    <svg class="ico-on" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg>
+    <svg class="ico-off" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/></svg>
+  </button>
+
+  <!-- 1. EL SOBRE -->
+  <section id="scene" class="scene" aria-label="Sobre">
+    <div class="hearts-bg" aria-hidden="true"></div>
+
+    <button id="envelope" class="envelope" aria-label="Toca para abrir la carta">
+      <div class="env-back"></div>
+      <div class="env-letter"><span>♥</span></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="seal" aria-hidden="true">
+        <span class="seal-inner"><small>Para</small><b>Karen</b></span>
+      </div>
+    </button>
+
+    <p class="hint">Toca para abrir</p>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main id="content" class="content" aria-hidden="true">
+
+    <!-- Hilo rojo de lana: baja por las 3 secciones, detrás del contenido (lo traza js/main.js) -->
+    <svg class="thread" aria-hidden="true">
+      <defs>
+        <radialGradient id="feltGrad" cx="35%" cy="28%" r="85%">
+          <stop offset="0" stop-color="#e8404f"/>
+          <stop offset="1" stop-color="#b91a2f"/>
+        </radialGradient>
+      </defs>
+      <path class="th-shadow"/>
+      <path class="th-fuzz"/>
+      <path class="th-a"/>
+      <path class="th-b"/>
+      <path class="th-a2"/>
+      <!-- Corazón final de fieltro rojo: encima del hilo (el hilo pasa por detrás) y debajo del moño -->
+      <path class="th-feltsh"/>
+      <path class="th-felt"/>
+      <!-- Nudo con el que empieza el hilo -->
+      <g class="th-start">
+        <path class="st-t1"/><path class="st-t2"/><path class="bw-f"/>
+        <ellipse class="bw-n"/><path class="bw-w"/>
+      </g>
+      <!-- Moño de lana al final del hilo (lo traza js/main.js) -->
+      <g class="th-bow">
+        <path class="bw-shadow"/>
+        <path class="bw-a"/>
+        <path class="bw-b"/>
+        <path class="bw-a2"/>
+        <path class="bw-f"/>
+        <ellipse class="bw-n"/>
+        <path class="bw-w"/>
+      </g>
+    </svg>
+
+    <!-- 2. LA CARTA -->
+    <section class="letter paper" id="letter">
+      <div class="paper-inner">
+        <p class="reveal kicker">Para Karencita</p>
+        <h1 class="reveal script">¡Feliz Cumpleaños!</h1>
+        <div class="divider reveal" aria-hidden="true"><i></i><span>♥</span><i></i></div>
+
+        <p class="reveal">Lamentablemente hoy no puedo estar allá. Sé que no te gusta mucho celebrarlo, pero quiero que sepas que hay personas que realmente te aprecian y te valoran por quien sos.</p>
+        <p class="reveal">Gracias por estar conmigo, espero que disfrutes este gran día.</p>
+        <p class="reveal ps"><b>P.D.:</b> El sábado te voy a felicitar como se debe!!!</p>
+      </div>
+    </section>
+
+    <!-- 3. GALERÍA (solo imágenes) -->
+    <section class="gallery" id="gallery" aria-label="Nuestras fotos juntos">
+      <h2 class="script reveal">Nuestras fotos juntos</h2>
+      <div class="zigzag" id="track">
+        <!-- Para cambiar/añadir fotos: copia una <figure> y apunta a img/fotoXX.jpg (4:5 o 1:1) -->
+        <figure class="polaroid step" style="--r:-4deg"><img src="img/foto01.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:3deg"><img src="img/foto02.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:-2deg"><img src="img/foto03.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:4deg"><img src="img/foto04.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:-3deg"><img src="img/foto05.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:2deg"><img src="img/foto06.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:-4deg"><img src="img/foto07.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:3deg"><img src="img/foto08.jpg" alt="" loading="lazy"></figure>
+        <figure class="polaroid step" style="--r:-2deg"><img src="img/foto09.jpg" alt="" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- 4. CIERRE -->
+    <section class="finale paper" id="finale">
+      <p class="reveal script big">Por muchos cumpleaños más juntos</p>
+      <button id="love" class="love reveal" type="button">
+        <span class="heart">♥</span> Te quiero
+      </button>
+    </section>
+  </main>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <script src="js/main.js"></script>
+</body>
+</html>
